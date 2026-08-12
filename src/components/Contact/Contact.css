@@ -1,0 +1,624 @@
+.contact {
+  padding: 120px 0;
+  background-color: #080808;
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #222, transparent);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c8a96b;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #f5f5f5;
+  margin: 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-info {
+  padding-right: 20px;
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  background-color: #151515;
+  border: 1px solid #292929;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: #333;
+  transform: translateX(4px);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #c8a96b;
+  flex-shrink: 0;
+}
+
+.contact-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-card-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9a9a9a;
+  margin: 0 0 6px;
+}
+
+.contact-card-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #f5f5f5;
+  margin: 0 0 4px;
+}
+
+.contact-card-text a {
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-card-text a:hover {
+  color: #c8a96b;
+}
+
+.contact-hours {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  color: #666;
+}
+
+.service-model-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 48px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(200, 169, 107, 0.08), rgba(8, 8, 8, 0.9));
+  border: 1px solid rgba(200, 169, 107, 0.2);
+  border-radius: 4px;
+  color: #c8a96b;
+}
+
+.service-model-note span {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #d4d4d4;
+}
+
+.hours-section {
+  padding: 32px;
+  background-color: #151515;
+  border: 1px solid #292929;
+  border-radius: 4px;
+}
+
+.hours-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f5f5f5;
+  margin: 0 0 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #222;
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hours-day {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9a9a9a;
+}
+
+.hours-time {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #d4d4d4;
+  text-align: right;
+}
+
+.contact-form-wrapper {
+  position: sticky;
+  top: 120px;
+}
+
+.contact-form-card {
+  padding: 48px;
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 4px;
+}
+
+.form-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f5f5f5;
+  margin: 0 0 8px;
+}
+
+.form-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  color: #9a9a9a;
+  margin: 0 0 32px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #d4d4d4;
+}
+
+.field-input {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #151515;
+  border: 1px solid #292929;
+  border-radius: 4px;
+  color: #f5f5f5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.field-input::placeholder {
+  color: #555;
+}
+
+.field-input:hover {
+  border-color: #333;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: #c8a96b;
+  box-shadow: 0 0 0 3px rgba(200, 169, 107, 0.15);
+  background-color: #181818;
+}
+
+.field-input.error {
+  border-color: #c0392b;
+  background-color: rgba(192, 57, 43, 0.05);
+}
+
+.field-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+}
+
+.field-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #151515;
+  border: 1px solid #292929;
+  border-radius: 4px;
+  color: #f5f5f5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.field-textarea::placeholder {
+  color: #555;
+}
+
+.field-textarea:hover {
+  border-color: #333;
+}
+
+.field-textarea:focus {
+  outline: none;
+  border-color: #c8a96b;
+  box-shadow: 0 0 0 3px rgba(200, 169, 107, 0.15);
+  background-color: #181818;
+}
+
+.field-textarea.error {
+  border-color: #c0392b;
+  background-color: rgba(192, 57, 43, 0.05);
+}
+
+.field-textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+}
+
+.field-error {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  color: #c0392b;
+}
+
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+}
+
+.success-check {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(200, 169, 107, 0.15);
+  border: 1px solid rgba(200, 169, 107, 0.3);
+  border-radius: 50%;
+  color: #c8a96b;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.success-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #f5f5f5;
+  margin: 0 0 12px;
+}
+
+.success-message {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #9a9a9a;
+  margin: 0 0 24px;
+  max-width: 300px;
+}
+
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-info {
+    padding-right: 0;
+  }
+
+  .contact-form-wrapper {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .contact-card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hours-section {
+    padding: 24px;
+  }
+
+  .contact-form-card {
+    padding: 32px 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* OR Separator */
+.or-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0 8px;
+}
+
+.or-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2a2a2a, transparent);
+  max-width: 120px;
+}
+
+.or-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+  background-color: #0d0d0d;
+  padding: 0 16px;
+  border: 1px solid #222;
+  border-radius: 4px;
+}
+
+/* Contact Form Socials */
+.contact-form-socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.social-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  padding: 12px 6px;
+  background-color: #151515;
+  border: 1px solid #292929;
+  border-radius: 16px;
+  color: #d4d4d4;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  border-color: #333;
+  color: #f5f5f5;
+}
+
+/* Instagram hover effect */
+/* .social-instagram:hover {
+  background: linear-gradient(45deg,
+      #f09433, #e6683c, #dc2743, #cc2366,
+      #bc1888, #9317ac, #6e1fd9, #3c22f6,
+      #15b2d3, #07a7c2, #00abf4);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+
+.social-instagram:hover svg,
+.social-instagram:hover .social-platform,
+.social-instagram:hover {
+  background: linear-gradient(45deg,
+      #f09433, #e6683c, #dc2743, #cc2366,
+      #bc1888, #9317ac, #6e1fd9, #3c22f6,
+      #15b2d3, #07a7c2, #00abf4);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.social-facebook:hover svg,
+.social-facebook:hover .social-platform {
+  background: linear-gradient(45deg, #1877F2, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* TikTok hover effect */
+.social-tiktok:hover {
+  border-color: transparent;
+}
+
+.social-tiktok:hover svg,
+.social-tiktok:hover .social-platform {
+  background: linear-gradient(45deg, #000000, #ff0050, #00f2ea);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-btn svg {
+  font-size: 34px;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.social-platform {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #d4d4d4;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .or-separator {
+    margin: 16px 0 6px;
+  }
+
+  .contact-form-socials {
+    gap: 12px;
+    flex-wrap: nowrap;
+    margin-top: 6px;
+  }
+
+  .social-btn {
+    border-radius: 14px;
+    gap: 6px;
+    padding: 8px 4px;
+  }
+
+  .social-btn svg {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .social-platform {
+    font-size: 11px;
+  }
+
+  .or-text {
+    font-size: 11px;
+  }
+
+  .or-line {
+    max-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .or-separator {
+    margin: 12px 0 4px;
+  }
+
+  .contact-form-socials {
+    gap: 8px;
+    flex-wrap: nowrap;
+    margin-top: 4px;
+  }
+
+  .social-btn {
+    border-radius: 12px;
+    gap: 4px;
+    padding: 6px 2px;
+  }
+
+  .social-btn svg {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .social-platform {
+    font-size: 9.5px;
+  }
+}

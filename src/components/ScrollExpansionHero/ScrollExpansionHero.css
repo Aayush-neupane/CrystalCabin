@@ -1,0 +1,605 @@
+.hero-root {
+  position: relative;
+  width: 100%;
+  height: 260vh;
+  min-height: 2000px;
+  background-color: #080808;
+  overflow: hidden;
+}
+
+.hero-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-img {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.nav-logo-line {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #f5f5f5;
+}
+
+.nav-logo-sub {
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #9a9a9a;
+  margin-top: -2px;
+}
+
+.hero-stage {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #080808;
+  overflow: hidden;
+}
+
+.hero-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 20px 80px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  border: 1px solid #222;
+  will-change: width, height, border-radius, transform;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 8, 0.1) 0%,
+    rgba(8, 8, 8, 0.2) 50%,
+    rgba(8, 8, 8, 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background-color: #080808;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(110px, 16vh, 150px) 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-motto {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+
+.motto-word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.motto-inner {
+  display: inline-block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(14px, 2.5vw, 22px);
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c8a96b;
+}
+
+.motto-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, #c8a96b, transparent);
+  flex-shrink: 0;
+}
+
+/* Sub-motto styles */
+.hero-motto-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+
+.motto-sub-word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.motto-sub-inner {
+  display: inline-block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(13px, 1.9vw, 18px);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #d4d4d4;
+}
+
+.motto-sub-divider {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, #d4d4d4, transparent);
+  flex-shrink: 0;
+}
+
+/* Motto decorative divider */
+.motto-deco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  pointer-events: auto;
+}
+
+.motto-deco-line {
+  width: clamp(40px, 6vw, 80px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c8a96b);
+  flex-shrink: 0;
+}
+
+.motto-deco-line:last-child {
+  background: linear-gradient(90deg, #c8a96b, transparent);
+}
+
+.motto-deco-stars {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: #c8a96b;
+  line-height: 1;
+}
+
+.hero-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  pointer-events: auto;
+  will-change: opacity, transform;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #f5f5f5;
+  margin: 0 0 24px;
+  max-width: 900px;
+}
+
+.title-accent {
+  color: #c8a96b;
+}
+
+.hero-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #9a9a9a;
+  margin: 0 0 28px;
+  max-width: 600px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.hero-trust {
+  pointer-events: auto;
+}
+
+.trust-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trust-number {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f5f5f5;
+  line-height: 1.2;
+}
+
+.trust-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, transparent, #2a2a2a, transparent);
+}
+
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #666;
+  pointer-events: none;
+  z-index: 20;
+  will-change: opacity;
+}
+
+.scroll-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.scroll-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, #c8a96b, transparent);
+}
+
+.scroll-line svg {
+  margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+  .hero-frame {
+    width: 50vw !important;
+    height: 60vh !important;
+    border-radius: 8px !important;
+  }
+
+  .nav-content {
+    padding: 16px 24px;
+  }
+
+  .hero-content-wrapper {
+    padding: clamp(90px, 15vh, 130px) 24px 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-root {
+    height: 200vh;
+    min-height: 1500px;
+  }
+
+  .hero-frame {
+    width: 80vw !important;
+    height: 50vh !important;
+    border-radius: 6px !important;
+  }
+
+  .nav-logo-line {
+    font-size: 12px;
+  }
+
+  .nav-logo-sub {
+    font-size: 9px;
+  }
+
+  .hero-content-wrapper {
+    padding: clamp(80px, 14vh, 120px) 20px 24px;
+  }
+
+  .hero-motto {
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .motto-inner {
+    font-size: clamp(11px, 2vw, 14px);
+  }
+
+  .motto-divider {
+    width: 40px;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 8vw, 56px);
+  }
+
+  .hero-description {
+    font-size: clamp(16px, 2.5vw, 18px);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .trust-items {
+    gap: 20px;
+  }
+
+  .trust-divider {
+    display: none;
+  }
+
+  .hero-scroll-cue {
+    bottom: 24px;
+  }
+
+  .hero-motto-sub {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .motto-sub-inner {
+    font-size: clamp(11px, 1.6vw, 14px);
+  }
+
+  .motto-sub-divider {
+    width: 30px;
+  }
+
+  .motto-deco {
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .motto-deco-line {
+    width: 36px;
+  }
+
+  .motto-deco-stars {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-frame {
+    width: 90vw !important;
+    height: 45vh !important;
+    border-radius: 4px !important;
+  }
+
+  .motto-inner {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .motto-divider {
+    width: 30px;
+  }
+
+  .motto-sub-inner {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .motto-sub-divider {
+    width: 20px;
+  }
+
+  .motto-deco-stars {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .trust-number {
+    font-size: 16px;
+  }
+
+  .trust-label {
+    font-size: 10px;
+  }
+}
+
+/* Mobile Message Styles */
+.mobile-message {
+  opacity: 0;
+  margin-top: 16px;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, rgba(200, 169, 107, 0.08), rgba(8, 8, 8, 0.9));
+  border: 1px solid rgba(200, 169, 107, 0.2);
+  border-radius: 12px;
+  pointer-events: auto;
+}
+
+.mobile-message-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.mobile-message-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(200, 169, 107, 0.15), rgba(200, 169, 107, 0.05));
+  border: 1px solid rgba(200, 169, 107, 0.3);
+  border-radius: 12px;
+  color: #c8a96b;
+}
+
+.mobile-message-text {
+  flex: 1;
+}
+
+.mobile-message-tagline {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c8a96b;
+  margin: 0 0 8px;
+}
+
+.mobile-message-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f5f5f5;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.mobile-message-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .mobile-message {
+    margin-top: 20px;
+    padding: 16px 20px;
+  }
+
+  .mobile-message-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .mobile-message-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .mobile-message-title {
+    font-size: 16px;
+  }
+
+  .mobile-message-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-message {
+    padding: 14px 16px;
+  }
+
+  .mobile-message-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .mobile-message-title {
+    font-size: 15px;
+  }
+
+  .mobile-message-description {
+    font-size: 13px;
+  }
+}

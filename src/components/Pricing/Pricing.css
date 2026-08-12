@@ -1,0 +1,526 @@
+.pricing {
+  padding: 120px 0;
+  background-color: #080808;
+  position: relative;
+}
+
+.pricing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #222, transparent);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 48px;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c8a96b;
+  margin-bottom: 0;
+}
+
+/* Vehicle Selector */
+.vehicle-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: #151515;
+  border: 1px solid #292929;
+  border-radius: 8px;
+  padding: 4px;
+  max-width: 720px;
+  margin: 0 auto 60px;
+}
+
+.vehicle-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #9a9a9a;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vehicle-option:hover:not(.active) {
+  color: #d4d4d4;
+  background-color: #1a1a1a;
+}
+
+.vehicle-option.active {
+  color: #080808;
+}
+
+.vehicle-indicator {
+  position: absolute;
+  inset: 0;
+  background-color: #c8a96b;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(200, 169, 107, 0.3);
+}
+
+.vehicle-option .vehicle-icon,
+.vehicle-option .vehicle-label {
+  position: relative;
+  z-index: 1;
+}
+
+.vehicle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.vehicle-label {
+  white-space: nowrap;
+}
+
+/* Pricing Cards */
+.pricing-cards {
+  display: grid;
+  gap: 24px;
+}
+
+.pricing-cards.desktop {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+}
+
+.pricing-cards.mobile {
+  grid-template-columns: 1fr;
+}
+
+.pricing-card {
+  position: relative;
+  background-color: #151515;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  border-color: #333;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-card.popular {
+  border-color: rgba(200, 169, 107, 0.4);
+  box-shadow: 0 0 0 1px rgba(200, 169, 107, 0.1), 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.pricing-card.popular:hover {
+  border-color: #c8a96b;
+  box-shadow: 0 0 0 1px rgba(200, 169, 107, 0.2), 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #c8a96b;
+  background-color: #080808;
+  border: 1px solid #c8a96b;
+  padding: 4px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.package-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background-color: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  color: #c8a96b;
+  margin-bottom: 20px;
+}
+
+.pricing-card.popular .package-icon {
+  background-color: rgba(200, 169, 107, 0.1);
+  border-color: rgba(200, 169, 107, 0.3);
+}
+
+.package-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #f5f5f5;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+}
+
+.stars {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #c8a96b;
+  line-height: 1;
+}
+
+/* Price Container */
+.price-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  margin: 0 -32px 24px;
+  background-color: #0d0d0d;
+  border-top: 1px solid #292929;
+  border-bottom: 1px solid #292929;
+}
+
+.pricing-card.popular .price-container {
+  background-color: rgba(200, 169, 107, 0.05);
+  border-color: rgba(200, 169, 107, 0.2);
+}
+
+.price {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #f5f5f5;
+  line-height: 1;
+}
+
+.pricing-card.popular .price {
+  color: #c8a96b;
+}
+
+/* Features Section */
+.features-section {
+  flex: 1;
+  margin-bottom: 32px;
+}
+
+.features-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9a9a9a;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 4px;
+}
+
+.feature-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #d4d4d4;
+  line-height: 1.5;
+  flex: 1;
+  text-align: left;
+}
+
+.feature-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(200, 169, 107, 0.15);
+  border: 1px solid rgba(200, 169, 107, 0.3);
+  border-radius: 4px;
+  color: #c8a96b;
+  flex-shrink: 0;
+}
+
+/* Buttons removed - using unified button system from styles/buttons.css */
+
+@media (max-width: 1024px) {
+  .pricing-cards.desktop {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-selector {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 4px 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .vehicle-selector::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vehicle-option {
+    flex-shrink: 0;
+    padding: 14px 24px;
+  }
+
+  .active-indicator {
+    display: none;
+  }
+
+  .vehicle-option.active {
+    color: #080808;
+  }
+
+  .vehicle-indicator {
+    border-radius: 4px;
+  }
+
+  .price {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .vehicle-selector {
+    margin-bottom: 40px;
+    border-radius: 6px;
+  }
+
+  .vehicle-option {
+    padding: 12px 20px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .pricing-card {
+    padding: 32px 24px;
+    border-radius: 10px;
+  }
+
+  .package-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+  }
+
+  .package-name {
+    font-size: 16px;
+  }
+
+  .price-container {
+    margin: 0 -24px 20px;
+    padding: 16px 0;
+  }
+
+  .price {
+    font-size: 44px;
+  }
+
+  .features-title {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .feature-item {
+    padding: 0;
+  }
+
+  .feature-name {
+    font-size: 13px;
+  }
+
+  .feature-check {
+    width: 22px;
+    height: 22px;
+  }
+
+  .popular-badge {
+    top: -10px;
+    font-size: 8px;
+    padding: 3px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-selector {
+    padding: 4px 6px;
+  }
+
+  .vehicle-option {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .vehicle-icon {
+    width: 18px;
+    height: 14px;
+  }
+
+  .pricing-card {
+    padding: 28px 20px;
+  }
+
+  .package-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .price {
+    font-size: 40px;
+  }
+}
+
+/* Add-Ons Section */
+.addons-section {
+  margin-bottom: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #292929;
+}
+
+.addons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.addon-item {
+  padding: 1px 0;
+}
+
+.addon-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  padding: 5px 8px;
+  background-color: #111;
+  border: 1px solid #292929;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.addon-label:hover {
+  border-color: #333;
+  background-color: #151515;
+}
+
+.addon-checkbox {
+  display: none;
+}
+
+.addon-checkbox + .addon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.addon-checkbox:checked + .addon-info .addon-name::before {
+  content: '✓ ';
+  color: #c8a96b;
+  font-weight: 600;
+}
+
+.addon-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addon-price {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #c8a96b;
+}
+
+.addon-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10px;
+  color: #9a9a9a;
+  line-height: 1.4;
+}
+
+.addon-checkbox:checked ~ .addon-info .addon-name {
+  color: #c8a96b;
+}
+
+.addon-checkbox:checked ~ .addon-desc {
+  color: #c8a96b;
+}

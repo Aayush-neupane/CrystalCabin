@@ -1,32 +1,28 @@
-# React + TypeScript + Vite
+# Crystal Cabin Detailing
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A backend and frontend site for a Canadian mobile car detailing shop.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Frontend**: React 19, TypeScript, Vite, Framer Motion, GSAP
+- **Backend**: Express + Nodemailer (deployed as a Netlify serverless function)
 
-## React Compiler
+## Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# frontend (port 5173)
+npm run dev
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+# backend (port 3001)
+npm run dev --prefix server
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Deployment
+
+Netlify handles both frontend and backend:
+
+- Static site builds from `dist/` (see `netlify.toml`)
+- The Express API runs as the serverless function `server/netlify/functions/api.ts`
+- `/api/*` requests are redirected to the function; `/*` is an SPA fallback
+
+Required env vars: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `ADMIN_EMAIL`, `FRONTEND_URL`.

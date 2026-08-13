@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, Clock, Send, Camera, Share2, Music, ChevronRight, Truck } from 'lucide-react';
 import { companyInfo } from '../../data/company';
+import { calculatePrice, adjustFinalPrice } from '../../data/pricing';
 import { AppointmentModal } from '../../components/AppointmentModal/AppointmentModal';
 import './AboutContact.css';
 
@@ -100,7 +101,7 @@ export function AboutContact() {
       packageName: 'PREMIUM',
       vehicleTypeId: 'sedan',
       vehicleTypeName: 'Sedan',
-      price: 140,
+      price: adjustFinalPrice(calculatePrice('premium', 'sedan')),
       addOns: [],
     });
     setIsModalOpen(true);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check } from 'lucide-react';
-import { pricingPackages, vehicleTypes, addOns, calculatePrice, formatPrice } from '../../data/pricing';
+import { pricingPackages, vehicleTypes, addOns, calculatePrice, adjustFinalPrice, formatPrice } from '../../data/pricing';
 import './Pricing.css';
 
 interface PricingProps {
@@ -86,7 +86,7 @@ export function Pricing({ onBookAppointment }: PricingProps) {
   const getTotalPrice = (packageId: string) => {
     const basePrice = calculatePrice(packageId, selectedVehicleType);
     const addOnTotal = selectedAddOns.reduce((sum, id) => sum + getAddOnPrice(id), 0);
-    return basePrice + addOnTotal;
+    return adjustFinalPrice(basePrice + addOnTotal);
   };
 
   const handleBookAppointment = (packageId: string) => {

@@ -111,6 +111,10 @@ export function calculatePrice(packageId: string, vehicleTypeId: string): number
   return pkg.prices[vehicleTypeId] || 0;
 }
 
+export function adjustFinalPrice(price: number): number {
+  return price % 2 === 0 ? price - 1 : price;
+}
+
 export function formatPrice(price: number): string {
   return `$${price}`;
 }

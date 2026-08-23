@@ -231,7 +231,7 @@
 
 .admin-table {
   width: 100%;
-  min-width: 980px;
+  min-width: 1120px;
   border-collapse: collapse;
   font-size: 0.88rem;
 }
@@ -412,30 +412,8 @@
   font-weight: 600;
 }
 
-/* ---------- Add-on sales section ---------- */
-
-.admin-addons-section {
-  margin-top: 48px;
-}
-
-.admin-section-title {
-  margin: 0 0 18px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: #f5f5f5;
-}
-
-.admin-table--addons {
-  min-width: 520px;
-}
-
-.admin-table--addons tfoot td {
-  padding: 14px 18px;
-  background-color: rgba(200, 169, 107, 0.05);
-  border-top: 1px solid #222;
-  color: #c8a96b;
-  font-weight: 600;
+.admin-table__addons {
+  max-width: 220px;
 }
 
 /* ---------- Error banner ---------- */

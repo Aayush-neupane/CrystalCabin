@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { z } from 'zod';
 import { sendAppointmentEmail } from '../services/emailService';
+import { isDatabaseConfigured, insertAppointment } from '../services/supabaseService';
 import { AppointmentData, ApiResponse } from '../types/appointment';
 
 const appointmentSchema = z.object({
@@ -41,19 +42,29 @@ export async function createAppointment(req: Request, res: Response): Promise<vo
     const validatedData = appointmentSchema.parse(req.body);
     const appointmentData: AppointmentData = validatedData;
 
+    if (!isDatabaseConfigured()) {
+      console.warn('SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY not set — appointment will be emailed but not stored.');
+    } else {
+      await insertAppointment(appointmentData);
+    }
+
     const emailData = {
       ...appointmentData,
       submittedAt: new Date().toISOString(),
     };
 
-    await sendAppointmentEmail(emailData);
+    try {
+      await sendAppointmentEmail(emailData);
+    } catch (emailError) {
+      console.error('Appointment email failed (appointment is still stored):', emailError);
+    }
 
     const response: ApiResponse = {
       success: true,
       message: 'Appointment request submitted successfully. Our team will contact you shortly to confirm.',
     };
 
-    res.status(200).json(response);
+    res.status(201).json(response);
   } catch (error) {
     if (error instanceof z.ZodError) {
       const errors: Record<string, string> = {};

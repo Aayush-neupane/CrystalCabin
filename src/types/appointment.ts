@@ -63,3 +63,12 @@ export interface ApiResponse {
   message: string;
   errors?: ValidationErrors;
 }
+
+export type AppointmentStatus = 'pending' | 'confirmed' | 'completed' | 'cancelled';
+
+export interface StoredAppointment extends Omit<AppointmentFormData, 'notes'> {
+  id: string;
+  notes?: string;
+  status: AppointmentStatus;
+  createdAt: string;
+}

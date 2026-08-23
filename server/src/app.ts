@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import appointmentRoutes from './routes/appointmentRoutes';
+import adminRoutes from './routes/adminRoutes';
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use('/api', appointmentRoutes);
+app.use('/api', adminRoutes);
 
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });

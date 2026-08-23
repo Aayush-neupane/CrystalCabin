@@ -8,9 +8,18 @@ import { MobileDetailingExperience } from './components/MobileDetailingExperienc
 import { ProofOfWork } from './components/ProofOfWork/ProofOfWork';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
+import { AdminPage } from './pages/Admin/AdminPage';
 import { addOns as addOnCatalog } from './data/pricing';
 
 function App() {
+  if (window.location.pathname.startsWith('/admin')) {
+    return <AdminPage />;
+  }
+
+  return <LandingPage />;
+}
+
+function LandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState<{
     packageId: string;
@@ -22,7 +31,7 @@ function App() {
   } | null>(null);
 
   const handleBookAppointment = useCallback(() => {
-    setIsModalOpen(true);
+    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   const handlePricingBookAppointment = useCallback((

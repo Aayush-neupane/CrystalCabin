@@ -49,7 +49,9 @@ export function Navbar({ onBookAppointment }: NavbarProps) {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="logo-line logo-sub"
             >
-              DETAILING
+              {'DETAILING'.split('').map((char, index) => (
+                <span key={index}>{char}</span>
+              ))}
             </motion.span>
           </div>
         </div>

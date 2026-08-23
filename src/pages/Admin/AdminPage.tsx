@@ -39,7 +39,11 @@ function Logo() {
       </span>
       <span className="admin-logo__text">
         <span className="admin-logo__line">CRYSTAL CABIN</span>
-        <span className="admin-logo__line admin-logo__sub">DETAILING</span>
+        <span className="admin-logo__line admin-logo__sub">
+          {'DETAILING'.split('').map((char, index) => (
+            <span key={index}>{char}</span>
+          ))}
+        </span>
       </span>
     </div>
   );

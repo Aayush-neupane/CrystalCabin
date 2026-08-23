@@ -135,7 +135,11 @@ export function ScrollExpansionHero({ onBookAppointment, onExploreServices }: Sc
             <img src={logo} alt="Crystal Cabin Detailing" className="nav-logo-img" />
             <div className="nav-logo-text">
               <span className="nav-logo-line">CRYSTAL CABIN</span>
-              <span className="nav-logo-sub">DETAILING</span>
+              <span className="nav-logo-sub">
+                {'DETAILING'.split('').map((char, index) => (
+                  <span key={index}>{char}</span>
+                ))}
+              </span>
             </div>
           </div>
         </div>

@@ -322,19 +322,8 @@ function AppointmentRow({ appointment, expanded, updating, onToggle, onStatusCha
                   <p>{appointment.serviceLocation.address}</p>
                   {appointment.serviceLocation.unit && <p>Unit {appointment.serviceLocation.unit}</p>}
                 </section>
-                <section>
-                  <h4>Pricing Breakdown</h4>
-                  <p>{appointment.packageName} ({appointment.vehicleTypeName}) — {formatMoney(appointment.price)}</p>
-                  {appointment.addOns.map((addOn) => (
-                    <p key={addOn.id} className="admin-table__muted">
-                      + {addOn.name} — {formatMoney(addOn.price)}
-                    </p>
-                  ))}
-                  {appointment.addOns.length > 0 && (
-                    <p>Total — {formatMoney(appointment.price + appointment.addOns.reduce((sum, a) => sum + a.price, 0))}</p>
-                  )}
-                </section>
               </div>
+              <PurchaseTable appointment={appointment} />
               {appointment.notes && (
                 <section className="admin-details__notes">
                   <h4>Notes</h4>
@@ -347,5 +336,52 @@ function AppointmentRow({ appointment, expanded, updating, onToggle, onStatusCha
         </tr>
       )}
     </>
+  );
+}
+
+function PurchaseTable({ appointment }: { appointment: StoredAppointment }) {
+  const addOnTotal = appointment.addOns.reduce((sum, addOn) => sum + addOn.price, 0);
+  const total = appointment.price + addOnTotal;
+
+  return (
+    <section className="admin-details__purchase">
+      <h4>Purchase Breakdown</h4>
+      <div className="admin-purchase-wrap">
+        <table className="admin-purchase">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Type</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{appointment.packageName}</td>
+              <td className="admin-table__muted">Package — {appointment.vehicleTypeName}</td>
+              <td>{formatMoney(appointment.price)}</td>
+            </tr>
+            {appointment.addOns.map((addOn) => (
+              <tr key={addOn.id}>
+                <td>{addOn.name}</td>
+                <td className="admin-table__muted">Add-on</td>
+                <td>{formatMoney(addOn.price)}</td>
+              </tr>
+            ))}
+            {appointment.addOns.length === 0 && (
+              <tr>
+                <td colSpan={3} className="admin-table__muted">No add-ons purchased</td>
+              </tr>
+            )}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan={2}>Total</td>
+              <td>{formatMoney(total)}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
   );
 }

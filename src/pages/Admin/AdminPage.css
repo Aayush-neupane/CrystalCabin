@@ -362,6 +362,56 @@
   word-break: break-all;
 }
 
+/* ---------- Purchase / add-ons table ---------- */
+
+.admin-details__purchase {
+  margin-top: 28px;
+  max-width: 560px;
+}
+
+.admin-purchase-wrap {
+  border: 1px solid #222;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.admin-purchase {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.admin-purchase th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #666;
+  background-color: #111;
+  border-bottom: 1px solid #222;
+}
+
+.admin-purchase td {
+  padding: 11px 16px;
+  color: #d4d4d4;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.admin-purchase td:last-child,
+.admin-purchase th:last-child {
+  text-align: right;
+}
+
+.admin-purchase tfoot td {
+  border-bottom: none;
+  border-top: 1px solid #222;
+  background-color: rgba(200, 169, 107, 0.05);
+  color: #c8a96b;
+  font-weight: 600;
+}
+
 /* ---------- Error banner ---------- */
 
 .admin-error-banner {

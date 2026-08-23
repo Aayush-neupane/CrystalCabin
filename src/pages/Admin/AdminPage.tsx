@@ -31,6 +31,20 @@ function formatTime12h(time: string): string {
   return `${hour12}:${String(minutes ?? 0).padStart(2, '0')} ${suffix}`;
 }
 
+function Logo() {
+  return (
+    <div className="admin-logo">
+      <span className="admin-logo__icon">
+        <img src={logo} alt="Crystal Cabin Detailing" className="admin-logo__img" />
+      </span>
+      <span className="admin-logo__text">
+        <span className="admin-logo__line">CRYSTAL CABIN</span>
+        <span className="admin-logo__line admin-logo__sub">DETAILING</span>
+      </span>
+    </div>
+  );
+}
+
 export function AdminPage() {
   const [token, setToken] = useState<string | null>(() => sessionStorage.getItem(TOKEN_KEY));
   const [password, setPassword] = useState('');
@@ -158,8 +172,7 @@ export function AdminPage() {
     return (
       <div className="admin-page">
         <form className="admin-login" onSubmit={handleLogin}>
-          <img className="admin-login__logo" src={logo} alt="Crystal Cabin Detailing logo" />
-          <p className="admin-login__eyebrow">Crystal Cabin Detailing</p>
+          <Logo />
           <h1 className="admin-login__title">Admin Access</h1>
           <div className="admin-login__divider" aria-hidden="true" />
           <label className="admin-login__label" htmlFor="admin-password">Password</label>
@@ -186,13 +199,7 @@ export function AdminPage() {
   return (
     <div className="admin-page">
       <header className="admin-header">
-        <div className="admin-header__brand">
-          <img className="admin-header__logo" src={logo} alt="Crystal Cabin Detailing logo" />
-          <div>
-            <p className="admin-header__eyebrow">Crystal Cabin Detailing</p>
-            <h1 className="admin-header__title">Appointments</h1>
-          </div>
-        </div>
+        <Logo />
         <div className="admin-header__actions">
           <button
             className="admin-button admin-button--ghost"

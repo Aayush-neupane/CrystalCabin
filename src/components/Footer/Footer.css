@@ -43,14 +43,14 @@
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 2px;
-  color: #f5f5f5;
+  color: #c8a96b;
 }
 
 .footer-logo-sub {
   font-weight: 400;
   font-size: 11px;
   letter-spacing: 4px;
-  color: #9a9a9a;
+  color: rgba(200, 169, 107, 0.72);
   margin-top: -2px;
 }
 

@@ -18,6 +18,25 @@
   text-align: center;
 }
 
+.admin-login__logo {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.admin-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-header__logo {
+  width: 52px;
+  height: 52px;
+  display: block;
+}
+
 .admin-login__eyebrow {
   margin: 0;
   font-size: 0.7rem;

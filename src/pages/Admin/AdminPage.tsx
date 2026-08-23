@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { StoredAppointment, AppointmentStatus } from '../../types/appointment';
+import logo from '../../assets/logo.png';
 import './AdminPage.css';
 
 const TOKEN_KEY = 'cc_admin_token';
@@ -157,6 +158,7 @@ export function AdminPage() {
     return (
       <div className="admin-page">
         <form className="admin-login" onSubmit={handleLogin}>
+          <img className="admin-login__logo" src={logo} alt="Crystal Cabin Detailing logo" />
           <p className="admin-login__eyebrow">Crystal Cabin Detailing</p>
           <h1 className="admin-login__title">Admin Access</h1>
           <div className="admin-login__divider" aria-hidden="true" />
@@ -184,9 +186,12 @@ export function AdminPage() {
   return (
     <div className="admin-page">
       <header className="admin-header">
-        <div>
-          <p className="admin-header__eyebrow">Crystal Cabin Detailing</p>
-          <h1 className="admin-header__title">Appointments</h1>
+        <div className="admin-header__brand">
+          <img className="admin-header__logo" src={logo} alt="Crystal Cabin Detailing logo" />
+          <div>
+            <p className="admin-header__eyebrow">Crystal Cabin Detailing</p>
+            <h1 className="admin-header__title">Appointments</h1>
+          </div>
         </div>
         <div className="admin-header__actions">
           <button

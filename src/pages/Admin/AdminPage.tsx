@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { StoredAppointment, AppointmentStatus } from '../../types/appointment';
+import { addOns as addOnCatalog } from '../../data/pricing';
 import './AdminPage.css';
 
 const TOKEN_KEY = 'cc_admin_token';
@@ -153,6 +154,29 @@ export function AdminPage() {
     return base;
   }, [appointments]);
 
+  const addOnStats = useMemo(() => {
+    const stats = new Map<string, { name: string; price: number; count: number }>();
+    addOnCatalog.forEach((addOn) => {
+      stats.set(addOn.id, { name: addOn.name, price: addOn.price, count: 0 });
+    });
+    appointments.forEach((appointment) => {
+      appointment.addOns.forEach((addOn) => {
+        const existing = stats.get(addOn.id);
+        if (existing) {
+          existing.count += 1;
+        } else {
+          stats.set(addOn.id, { name: addOn.name, price: addOn.price, count: 1 });
+        }
+      });
+    });
+    return Array.from(stats.values());
+  }, [appointments]);
+
+  const addOnRevenue = useMemo(
+    () => addOnStats.reduce((sum, stat) => sum + stat.count * stat.price, 0),
+    [addOnStats]
+  );
+
   if (!token) {
     return (
       <div className="admin-page">
@@ -259,6 +283,38 @@ export function AdminPage() {
           </table>
         </div>
       )}
+
+      <section className="admin-addons-section">
+        <h2 className="admin-section-title">Add-On Sales</h2>
+        <div className="admin-table-wrap">
+          <table className="admin-table admin-table--addons">
+            <thead>
+              <tr>
+                <th>Add-On</th>
+                <th>Price</th>
+                <th>Times Sold</th>
+                <th>Revenue</th>
+              </tr>
+            </thead>
+            <tbody>
+              {addOnStats.map((stat) => (
+                <tr key={stat.name}>
+                  <td>{stat.name}</td>
+                  <td>{formatMoney(stat.price)}</td>
+                  <td className={stat.count === 0 ? 'admin-table__muted' : ''}>{stat.count}</td>
+                  <td className={stat.count === 0 ? 'admin-table__muted' : ''}>{formatMoney(stat.count * stat.price)}</td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr className="admin-table__total-row">
+                <td colSpan={3}>Total Add-On Revenue</td>
+                <td>{formatMoney(addOnRevenue)}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
     </div>
   );
 }

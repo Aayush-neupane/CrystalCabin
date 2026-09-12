@@ -76,7 +76,6 @@ export const pricingPackages: PricingPackage[] = [
       'Seat Treatment',
       'Carpet Extraction',
       'Leather Conditioning',
-      'Odor Treatment',
     ],
     prices: {
       sedan: 110,

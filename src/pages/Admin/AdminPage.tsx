@@ -363,7 +363,10 @@ function AppointmentRow({ appointment, expanded, updating, onToggle, onStatusCha
 
 function PurchaseTable({ appointment }: { appointment: StoredAppointment }) {
   const addOnTotal = appointment.addOns.reduce((sum, addOn) => sum + addOn.price, 0);
-  const total = appointment.price + addOnTotal;
+  // Stored price already includes add-ons (see Pricing.getTotalPrice) —
+  // adding them again would double-count. Derive the package base instead.
+  const total = appointment.price;
+  const basePrice = Math.max(0, appointment.price - addOnTotal);
 
   return (
     <section className="admin-details__purchase">
@@ -381,7 +384,7 @@ function PurchaseTable({ appointment }: { appointment: StoredAppointment }) {
             <tr>
               <td>{appointment.packageName}</td>
               <td className="admin-table__muted">Package — {appointment.vehicleTypeName}</td>
-              <td>{formatMoney(appointment.price)}</td>
+              <td>{formatMoney(basePrice)}</td>
             </tr>
             {appointment.addOns.map((addOn) => (
               <tr key={addOn.id}>

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import logo from '../../assets/logo.png';
 import { navigation } from '../../data/company';
 import './Navbar.css';
 
@@ -26,14 +25,6 @@ export function Navbar({ onBookAppointment }: NavbarProps) {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="navbar-container" role="navigation" aria-label="Main navigation">
         <div className="navbar-logo" aria-label="Crystal Cabin Detailing Home">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="logo-icon"
-          >
-            <img src={logo} alt="Crystal Cabin Detailing" className="logo-img" />
-          </motion.div>
           <div className="logo-text">
             <motion.span
               initial={{ opacity: 0, y: 10 }}

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowDown, Truck } from 'lucide-react';
-import logo from '../../assets/logo.png';
 import './ScrollExpansionHero.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -132,7 +131,6 @@ export function ScrollExpansionHero({ onBookAppointment, onExploreServices }: Sc
       <div ref={navRef} className="hero-nav" role="navigation" aria-label="Main navigation">
         <div className="nav-content">
           <div className="nav-brand">
-            <img src={logo} alt="Crystal Cabin Detailing" className="nav-logo-img" />
             <div className="nav-logo-text">
               <span className="nav-logo-line">CRYSTAL CABIN</span>
               <span className="nav-logo-sub">

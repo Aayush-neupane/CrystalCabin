@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { StoredAppointment, AppointmentStatus } from '../../types/appointment';
+import logo from '../../assets/logo.png';
 import './AdminPage.css';
 
 const TOKEN_KEY = 'cc_admin_token';
@@ -33,6 +34,9 @@ function formatTime12h(time: string): string {
 function Logo() {
   return (
     <div className="admin-logo">
+      <span className="admin-logo__icon">
+        <img src={logo} alt="Crystal Cabin Detailing" className="admin-logo__img" />
+      </span>
       <span className="admin-logo__text">
         <span className="admin-logo__line">CRYSTAL CABIN</span>
         <span className="admin-logo__line admin-logo__sub">

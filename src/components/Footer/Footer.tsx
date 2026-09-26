@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Camera, Share2, Music, ArrowUp } from 'lucide-react';
-import logo from '../../assets/logo.png';
 import { companyInfo, navigation } from '../../data/company';
 import './Footer.css';
 
@@ -46,10 +45,6 @@ export function Footer() {
           className="footer-main"
         >
           <div className="footer-brand">
-            <div className="footer-logo">
-              <img src={logo} alt="Crystal Cabin Detailing" className="footer-logo-img" />
-
-            </div>
             <p className="footer-tagline">{companyInfo.tagline}</p>
           </div>
 

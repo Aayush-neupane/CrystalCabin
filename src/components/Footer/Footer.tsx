@@ -107,17 +107,6 @@ export function Footer() {
             <p className="copyright-text">
               © {currentYear} Crystal Cabin Detailing. All Rights Reserved.
             </p>
-            <p className="built-by-text">
-              Website built by{' '}
-              <a
-                href="https://dynamic-aayush38.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="built-by-link"
-              >
-                DynamicAayush
-              </a>
-            </p>
           </div>
 
           <div className="footer-legal">
@@ -130,6 +119,28 @@ export function Footer() {
             <ArrowUp size={20} strokeWidth={2} />
           </button>
         </motion.div>
+
+        <div className="footer-credit">
+          <a
+            href="https://dynamic-aayush38.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Aayush Neupane — portfolio"
+            className="footer-credit-link"
+          >
+            <img
+              src="/logotrp.png"
+              alt="Aayush Neupane"
+              width={32}
+              height={32}
+              draggable={false}
+              className="footer-credit-logo"
+            />
+            <span>
+              Developed by <span className="footer-credit-name">Aayush Neupane</span>
+            </span>
+          </a>
+        </div>
       </div>
     </footer>
   );

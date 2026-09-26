@@ -149,6 +149,55 @@
   color: #e0c690;
 }
 
+.footer-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #222;
+}
+
+.footer-credit-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-credit-link:hover {
+  color: #d4d4d4;
+}
+
+.footer-credit-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #2a2a2a;
+  object-fit: cover;
+  transition: border-color 0.2s ease;
+}
+
+.footer-credit-link:hover .footer-credit-logo {
+  border-color: #c8a96b;
+}
+
+.footer-credit-name {
+  color: #d4d4d4;
+  text-underline-offset: 4px;
+}
+
+.footer-credit-link:hover .footer-credit-name {
+  color: #c8a96b;
+  text-decoration: underline;
+}
+
 .footer-legal {
   display: flex;
   align-items: center;

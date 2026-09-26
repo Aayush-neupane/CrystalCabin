@@ -5,6 +5,11 @@ import adminRoutes from './routes/adminRoutes';
 
 const app = express();
 
+// Behind Netlify's edge + serverless-http there is always a proxy in front,
+// so Express must trust it to derive req.ip from X-Forwarded-For. Without
+// this, req.ip is undefined and express-rate-limit crashes (500s).
+app.set('trust proxy', 1);
+
 app.use(cors({
   origin: (origin, callback) => {
     // Allow same-machine dev frontends on any port (5173, 5180, etc.)

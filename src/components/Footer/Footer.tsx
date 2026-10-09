@@ -129,7 +129,7 @@ export function Footer() {
             className="footer-credit-link"
           >
             <img
-              src="/logotrp.png"
+              src="/logo-trp.png"
               alt="Aayush Neupane"
               width={32}
               height={32}
